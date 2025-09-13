@@ -231,6 +231,7 @@ h2 {
     margin-top: 1.4em;
     width: 100%;
     max-width: 900px;
+    position: relative;  /* add relative positioning for fullscreen button */
 }
 
 #game-frame {
@@ -244,6 +245,30 @@ h2 {
     margin-bottom: 1.2em;
     border: none;
     display: none;
+}
+
+#fullscreen-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    padding: 0.5em 1em;
+    font-size: 1em;
+    font-weight: 700;
+    background: var(--play-btn-bg);
+    color: var(--play-btn-text);
+    border: 1.5px solid var(--btn-border);
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 1.5px 4px rgba(0,0,0,0.25);
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    user-select: none;
+}
+
+#fullscreen-btn:hover {
+    background: var(--play-btn-hover);
+    color: var(--play-btn-hover-text);
+    box-shadow: 0 0 12px var(--accent);
 }
 
 #game-placeholder {
