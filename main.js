@@ -10,6 +10,11 @@ const games = [
     { name: "Stickman Hook", file: "stickmanhook.html" },
     { name: "drive mad", file: "drivemad.html" },
     { name: "Super Mario 64", file: "supermario64.html" }
+        { name: "FNAW", file: "silly2.html" }
+    { name: "evil glitch", file: "evil glitch.html" }
+    { name: "offline paradise", file: "offlineparadise.html.html" }
+    { name: "snowgrave", file: "Deltarune Snowgrave #1 Killer Queen Takes Action" }
+
 ];
 
 // Sidebar navigation logic
