@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Underdogs Game Portal</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="scripts.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Underdogs Game Portal</h1>
+    <nav role="tablist" aria-label="Main navigation tabs">
+      <button id="tab-play" role="tab" aria-selected="true" aria-controls="panel-play" tabindex="0">Play</button>
+      <button id="tab-about" role="tab" aria-selected="false" aria-controls="panel-about" tabindex="-1">About</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="panel-play" role="tabpanel" tabindex="0" aria-labelledby="tab-play">
+      <ul class="game-list" id="gameList" aria-label="List of offline games">
+        <!-- Populated by scripts.js -->
+      </ul>
+    </section>
+
+    <section id="panel-about" role="tabpanel" tabindex="0" aria-labelledby="tab-about" hidden>
+      <article>
+        <h2>About This Offline Game Portal</h2>
+        <p>This portal was created on <time datetime="2025-09-13">September 13, 2025</time> by a freshmen developer.</p>
+        <p>It hosts an offline collection of classic browser games sourced from the Underdogs repository, designed for quick and easy play without internet access.</p>
+        <p>Built with modern web standards for performance, accessibility, and a clean black-and-white aesthetic.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Underdogs Offline Games
+  </footer>
+</body>
+</html>
