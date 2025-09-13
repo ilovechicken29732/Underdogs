@@ -11,7 +11,6 @@ const games = [
     { name: "drive mad", file: "drivemad.html" },
     { name: "Super Mario 64", file: "supermario64.html" },
     { name: "trex", file: "trex.html" },
-
 ];
 
 // Sidebar navigation logic
@@ -73,4 +72,18 @@ document.addEventListener('keydown', (e) => {
     if (e.key === '1') document.querySelector('.nav-btn[data-tab="games"]').click();
     if (e.key === '2') document.querySelector('.nav-btn[data-tab="about"]').click();
     if (e.key === '3') document.querySelector('.nav-btn[data-tab="settings"]').click();
+});
+
+// Fullscreen button logic for the game iframe
+document.getElementById('fullscreen-btn').addEventListener('click', () => {
+    const iframe = document.getElementById('game-frame');
+    if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+    } else if (iframe.mozRequestFullScreen) { /* Firefox */
+        iframe.mozRequestFullScreen();
+    } else if (iframe.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+        iframe.webkitRequestFullscreen();
+    } else if (iframe.msRequestFullscreen) { /* IE/Edge */
+        iframe.msRequestFullscreen();
+    }
 });
