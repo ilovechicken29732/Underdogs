@@ -7,7 +7,7 @@ const games = [
     { name: "Slope", file: "slope.html.html" },
     { name: "Spacebar Clicker", file: "spacebarclicker.html.html" },
     { name: "Stack", file: "stack.html" },
-    { name: "Stickman Hook", file: "stickmanhook.html.html" },
+    { name: "Stickman Hook", file: "stickmanhook.html" },
     { name: "drive mad", file: "drivemad.html" },
     { name: "Super Mario 64", file: "supermario64.html" }
 ];
