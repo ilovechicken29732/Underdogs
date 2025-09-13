@@ -1,68 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Underdogs Game Hub</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><circle fill='black' cx='24' cy='24' r='22'/><text x='50%' y='54%' text-anchor='middle' fill='white' font-size='22' font-family='Arial' font-weight='bold' dy='.3em'>UG</text></svg>">
+    <meta charset="UTF-8" />
+    <title>Incatnito</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect x='6' y='6' width='36' height='36' fill='%23011111' stroke='%2300ffff' stroke-width='3' rx='6' ry='6'/%3E%3Ctext x='50%25' y='54%25' fill='%2300ffff' font-family='Arial, monospace' font-weight='bold' font-size='24' text-anchor='middle' dominant-baseline='middle'%3EI%3C/text%3E%3C/svg%3E" />
 </head>
 <body>
-    <aside id="sidebar">
-        <div id="site-logo">
-            <svg width="44" height="44" viewBox="0 0 48 48">
-                <circle cx="24" cy="24" r="22" fill="black" stroke="white" stroke-width="3"/>
-                <text x="50%" y="54%" text-anchor="middle" fill="white" font-size="22" font-family="Arial" font-weight="bold" dy=".3em">UG</text>
+    <aside id="sidebar" role="complementary" aria-label="Main Sidebar">
+        <div id="site-logo" aria-label="Incatnito logo" role="img" tabindex="0">
+            <svg width="44" height="44" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" >
+                <rect x="6" y="6" width="36" height="36" fill="#011111" stroke="#00ffff" stroke-width="3" rx="6" ry="6"/>
+                <text x="50%" y="62%" fill="#00ffff" font-family="Arial, monospace" font-weight="bold" font-size="24" text-anchor="middle" dominant-baseline="middle">I</text>
             </svg>
-            <span>Underdogs</span>
+            <span>Incatnito</span>
         </div>
-        <nav id="main-nav">
-            <button class="nav-btn active" data-tab="games">🎮 Games</button>
-            <button class="nav-btn" data-tab="about">ℹ️ About</button>
-            <button class="nav-btn" data-tab="settings">⚙️ Settings</button>
+        <nav id="main-nav" role="navigation" aria-label="Primary Navigation">
+            <button class="nav-btn active" data-tab="games" role="tab" aria-selected="true" aria-controls="games-tab">🎮 Games</button>
+            <button class="nav-btn" data-tab="about" role="tab" aria-selected="false" aria-controls="about-tab">ℹ️ About</button>
+            <button class="nav-btn" data-tab="settings" role="tab" aria-selected="false" aria-controls="settings-tab">⚙️ Settings</button>
         </nav>
         <footer>
-            <small>Made by a West Fork student<br>&copy; 2025 ilovechicken29732</small>
+            <small>Created by a West Fork student<br>&copy; 2025 ilovechicken29732</small>
         </footer>
     </aside>
     <main id="main-content">
-        <section id="games-tab" class="tab active">
-            <h1>Offline Game Library</h1>
-            <div id="games-list"></div>
-            <div id="game-area" class="card">
-                <iframe id="game-frame" src="" frameborder="0" allowfullscreen></iframe>
+        <section id="games-tab" class="tab active" role="tabpanel" aria-labelledby="games" tabindex="0">
+            <h1>Offline Games</h1>
+            <div id="games-list" aria-live="polite" aria-label="Game library"></div>
+            <div id="game-area" class="card" aria-label="Game player">
+                <iframe id="game-frame" src="" frameborder="0" allowfullscreen title="Game frame"></iframe>
                 <div id="game-placeholder" class="card-content">
-                    <h2>Welcome!</h2>
-                    <p>Pick a game from your library to play offline.<br>
-                    Play modes: in this tab, new tab, or about:blank (privacy mode).</p>
+                    <h2>Welcome to Incatnito</h2>
+                    <p>Select a game from your library to play offline instantly.<br />
+                    Choose your play mode in settings: here, new tab, or private mode.</p>
                 </div>
             </div>
         </section>
-        <section id="about-tab" class="tab">
-            <h1>About Underdogs</h1>
+        <section id="about-tab" class="tab" role="tabpanel" aria-labelledby="about" tabindex="0">
+            <h1>About Incatnito</h1>
             <div class="card">
                 <div class="card-content">
-                    <p><strong>Underdogs Game Hub</strong> is a modern, offline game launcher built by a West Fork student. All games are local, private, and play instantly—even without internet!</p>
+                    <p><strong>Incatnito</strong> is your private offline game launcher. Built by a West Fork student, it ensures your games are local, secure, and accessible without internet.</p>
                     <ul>
-                        <li>Black & white minimalist theme</li>
-                        <li>Settings for play mode (tab, new tab, about:blank)</li>
-                        <li>Created by <a href="https://github.com/ilovechicken29732" target="_blank">ilovechicken29732</a></li>
+                        <li>Sleek dark theme with vibrant tech accent</li>
+                        <li>Flexible play modes for convenience and privacy</li>
+                        <li>Designed with simplicity, privacy, and speed in mind</li>
+                        <li>Open source and community-friendly</li>
                     </ul>
+                    <p>Created by <a href="https://github.com/ilovechicken29732" target="_blank" rel="noopener">ilovechicken29732</a></p>
                 </div>
             </div>
         </section>
-        <section id="settings-tab" class="tab">
+        <section id="settings-tab" class="tab" role="tabpanel" aria-labelledby="settings" tabindex="0">
             <h1>Settings</h1>
             <div class="card">
                 <div class="card-content">
                     <label for="play-mode">Game Play Mode:</label>
-                    <select id="play-mode">
+                    <select id="play-mode" aria-describedby="play-mode-desc">
                         <option value="here">Play in this tab</option>
                         <option value="newtab">Open in new tab</option>
-                        <option value="blank">Open in about:blank</option>
+                        <option value="blank">Open in private mode (about:blank)</option>
                     </select>
-                    <hr>
-                    <p>Theme: <strong>Black & White</strong> (always on)</p>
+                    <div id="play-mode-desc" class="sr-only">
+                        Choose how games launch when selected: in current tab, a new tab, or a private tab for privacy.
+                    </div>
+                    <hr />
+                    <p><strong>Theme:</strong> Dark & Tech Blue (always on)</p>
                 </div>
             </div>
         </section>
