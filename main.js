@@ -10,7 +10,6 @@ const games = [
     { name: "Stickman Hook", file: "stickmanhook.html" },
     { name: "drive mad", file: "drivemad.html" },
     { name: "Super Mario 64", file: "supermario64.html" },
-    { name: "tetris", file: "tetris.html" },
     { name: "trex", file: "trex.html" },
 
 ];
