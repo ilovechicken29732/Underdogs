@@ -1,36 +1,39 @@
 :root {
-    --bg: #111;
-    --bg-light: #222;
-    --sidebar-bg: linear-gradient(180deg, #111 60%, #222 100%);
-    --card-bg: #181818;
-    --btn-bg: #222;
-    --btn-border: #fff;
-    --hover-bg: #fff;
+    /* Softer dark base colors for less eye strain */
+    --bg: #121212; 
+    --bg-light: #1e1e1e;
+    --sidebar-bg: linear-gradient(180deg, #121212 60%, #1e1e1e 100%);
+    --card-bg: #1e1e1e;
+    --btn-bg: #2a2a2a;
+    --btn-border: #bbbbbb88; /* softer border */
+    --hover-bg: #ffffffdd; /* semi-transparent white hover */
     --hover-text: #111;
-    --text: #fff;
-    --shadow: 0 4px 20px rgba(0,0,0,0.20);
-    --card-border: #fff;
-    --accent: #fff;
-    --play-btn-bg: #222;
-    --play-btn-hover: #fff;
-    --play-btn-text: #fff;
+    --text-primary: rgba(255, 255, 255, 0.87); /* improved readability */
+    --text-secondary: rgba(255, 255, 255, 0.6);
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.4); /* stronger shadow for depth */
+    --card-border: #555555bb; /* subtle border */
+    --accent: #64d2ff; /* tech-inspired cyan accent */
+    --play-btn-bg: #2a2a2a;
+    --play-btn-hover: #64d2ff;
+    --play-btn-text: #ccefff;
     --play-btn-hover-text: #111;
 }
 
+/* Base body and text */
 body {
     margin: 0;
     background: var(--bg);
-    color: var(--text);
+    color: var(--text-primary);
     font-family: 'Segoe UI', 'Arial', sans-serif;
     min-height: 100vh;
     display: flex;
-    transition: background .4s, color .4s;
+    transition: background 0.4s ease, color 0.4s ease;
 }
 
 #sidebar {
     width: 260px;
     background: var(--sidebar-bg);
-    color: var(--text);
+    color: var(--text-primary);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,6 +44,7 @@ body {
     left: 0;
     bottom: 0;
     z-index: 2;
+    border-right: 1px solid #2f2f2f;
 }
 
 #site-logo {
@@ -48,10 +52,11 @@ body {
     align-items: center;
     gap: 0.5em;
     font-size: 1.6em;
-    font-weight: bold;
+    font-weight: 700;
     letter-spacing: 2px;
     color: var(--accent);
     margin-bottom: 2em;
+    text-shadow: 0 0 5px var(--accent);
 }
 
 #main-nav {
@@ -67,128 +72,155 @@ body {
     border: 2px solid var(--btn-border);
     color: var(--accent);
     font-size: 1.2em;
-    font-weight: bold;
+    font-weight: 600;
     text-align: left;
     padding: 0.7em 1em;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: background 0.22s, color 0.22s, border-color 0.22s;
+    transition: background 0.22s ease, color 0.22s ease, border-color 0.22s ease, box-shadow 0.3s ease;
     display: flex;
     align-items: center;
     gap: 0.7em;
+    box-shadow: inset 0 0 5px transparent;
 }
 .nav-btn.active,
 .nav-btn:hover {
     background: var(--hover-bg);
     color: var(--hover-text);
     border-color: var(--hover-text);
+    box-shadow: 0 0 8px var(--accent);
 }
 
 footer {
     margin-top: 2em;
     font-size: 0.9em;
-    color: #bbb;
+    color: var(--text-secondary);
     text-align: center;
 }
 
+/* Main content area */
 #main-content {
     margin-left: 260px;
     width: 100%;
     padding: 2em 3vw;
     min-height: 100vh;
     background: var(--bg);
-    color: var(--text);
+    color: var(--text-primary);
 }
 
+/* Tab content */
 .tab {
     display: none;
-    animation: fadein .7s;
+    animation: fadein 0.7s ease forwards;
 }
 .tab.active {
     display: block;
 }
 
+/* Fade-in animation */
 @keyframes fadein {
-    from { opacity: 0; transform: translateY(24px);}
-    to { opacity: 1; transform: translateY(0);}
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
+/* Card styles */
 .card {
     background: var(--card-bg);
     border-radius: 14px;
-    border: 2px solid var(--card-border);
+    border: 1.5px solid var(--card-border);
     box-shadow: var(--shadow);
     margin: 2em 0;
-    padding: 1em 2em;
+    padding: 1.2em 2em;
+    transition: box-shadow 0.3s ease;
+}
+.card:hover {
+    box-shadow: 0 8px 30px var(--accent);
 }
 
 .card-content {
     padding: 0.5em 0;
 }
 
-h1 {
+h1, h2 {
     color: var(--accent);
-    font-size: 2.2em;
-    margin-bottom: 0.2em;
+    text-shadow: 0 0 4px var(--accent);
+}
+h1 {
+    font-size: 2.4em;
+    margin-bottom: 0.3em;
+    font-weight: 700;
     letter-spacing: 1px;
 }
-
 h2 {
-    color: var(--accent);
-    font-size: 1.4em;
-    margin: 0.7em 0 0.4em 0;
+    font-size: 1.5em;
+    margin: 0.7em 0 0.5em 0;
+    font-weight: 600;
 }
 
+/* Games list styling */
 #games-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.4em;
+    gap: 1.6em;
     margin-bottom: 2em;
 }
 
+/* Game cards with soft shadows and rounded corners */
 .game-card {
     background: var(--card-bg);
-    border: 2px solid var(--card-border);
-    border-radius: 12px;
+    border: 1.5px solid var(--card-border);
+    border-radius: 14px;
     flex: 1 1 210px;
     min-width: 210px;
-    max-width: 260px;
-    padding: 1em 1em 1em 1em;
+    max-width: 270px;
+    padding: 1.2em 1.2em 1em 1.2em;
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,.10);
+    box-shadow: 0 3px 12px rgba(0,0,0,0.18);
+    transition: box-shadow 0.3s ease;
+}
+.game-card:hover {
+    box-shadow: 0 8px 25px var(--accent);
 }
 
 .game-title {
     color: var(--accent);
-    font-size: 1.1em;
-    font-weight: bold;
-    margin-bottom: 0.5em;
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-bottom: 0.6em;
     text-align: center;
 }
 
 .play-btn-group {
     display: flex;
-    gap: 0.4em;
-    margin-top: 0.7em;
+    gap: 0.6em;
+    margin-top: 0.8em;
 }
 
 .play-btn {
     background: var(--play-btn-bg);
     color: var(--play-btn-text);
     border: none;
-    border-radius: 6px;
-    font-size: 1em;
-    padding: 0.4em 1em;
+    border-radius: 8px;
+    font-size: 1.05em;
+    padding: 0.48em 1.2em;
     cursor: pointer;
-    font-weight: bold;
-    transition: background 0.2s, color 0.2s;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.19);
+    font-weight: 700;
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 1.5px 4px rgba(0,0,0,0.25);
+    user-select: none;
 }
 .play-btn:hover {
     background: var(--play-btn-hover);
     color: var(--play-btn-hover-text);
+    box-shadow: 0 0 12px var(--accent);
 }
 
 #game-area {
@@ -196,7 +228,7 @@ h2 {
     flex-direction: column;
     align-items: center;
     min-height: 340px;
-    margin-top: 1em;
+    margin-top: 1.4em;
     width: 100%;
     max-width: 900px;
 }
@@ -206,10 +238,10 @@ h2 {
     min-height: 540px;
     max-width: 800px;
     max-height: 80vh;
-    background: #111;
-    border-radius: 10px;
-    box-shadow: 0 2px 18px rgba(0,0,0,0.17);
-    margin-bottom: 1em;
+    background: var(--bg-light);
+    border-radius: 12px;
+    box-shadow: 0 3px 20px rgba(0,0,0,0.35);
+    margin-bottom: 1.2em;
     border: none;
     display: none;
 }
@@ -217,35 +249,45 @@ h2 {
 #game-placeholder {
     text-align: center;
     margin-top: 3em;
-    color: var(--accent);
+    color: var(--text-secondary);
+    font-style: italic;
 }
 
+/* Form elements */
 select,
 button {
     font-size: 1em;
     margin-top: 1em;
     background: var(--btn-bg);
-    color: var(--accent);
+    color: var(--text-primary);
     border: 1.5px solid var(--btn-border);
-    border-radius: 6px;
-    padding: 0.4em 0.8em;
-    transition: background .2s;
+    border-radius: 8px;
+    padding: 0.5em 0.9em;
+    transition: background 0.3s ease;
+    cursor: pointer;
+}
+select:hover,
+button:hover {
+    background: var(--hover-bg);
+    color: var(--hover-text);
 }
 
 hr {
     border: none;
     border-top: 2px solid var(--card-border);
-    margin: 1em 0;
+    margin: 1.2em 0;
 }
 
 a {
     color: var(--accent);
     text-decoration: underline;
+    transition: color 0.3s ease;
 }
 a:hover {
     color: var(--hover-bg);
 }
 
+/* Responsive adjustments */
 @media only screen and (max-width: 850px) {
     #sidebar {
         width: 100vw;
@@ -259,6 +301,7 @@ a:hover {
         z-index: 9;
         background: var(--sidebar-bg);
         padding: 0.7em 0.5em;
+        border-bottom: 1px solid #2f2f2f;
     }
     #site-logo {
         margin-bottom: 0;
@@ -269,7 +312,9 @@ a:hover {
         gap: 0.5em;
         margin-bottom: 0;
     }
-    footer {display: none;}
+    footer {
+        display: none;
+    }
     #main-content {
         margin-left: 0;
         margin-top: 68px;
