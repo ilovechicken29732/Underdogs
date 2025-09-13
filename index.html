@@ -29,8 +29,9 @@
         <section id="games-tab" class="tab active" role="tabpanel" aria-labelledby="games" tabindex="0">
             <h1>Offline Games</h1>
             <div id="games-list" aria-live="polite" aria-label="Game library"></div>
-            <div id="game-area" class="card" aria-label="Game player">
+            <div id="game-area" class="card" aria-label="Game player" style="position: relative;">
                 <iframe id="game-frame" src="" frameborder="0" allowfullscreen title="Game frame"></iframe>
+                <button id="fullscreen-btn" aria-label="Toggle fullscreen for game" style="position: absolute; top: 10px; right: 10px; z-index: 10; padding: 6px 12px; font-size: 14px; cursor: pointer;">Fullscreen</button>
                 <div id="game-placeholder" class="card-content">
                     <h2>Welcome to Incatnito</h2>
                     <p>Select a game from your library to play offline instantly.<br />
