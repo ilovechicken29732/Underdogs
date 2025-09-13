@@ -1,7 +1,5 @@
 const games = [
     { name: "2048", file: "2048.html.html" },
-    { name: "Bloons TD 5", file: "bloonstowerdefense5.html.html" },
-    { name: "Bloxorz", file: "bloxorz.html.html" },
     { name: "Geometry Dash", file: "geometrydash.html.html" },
     { name: "It's Raining Boxes", file: "itsrainingboxes.html" },
     { name: "Just One Boss", file: "justoneboss.html" },
@@ -9,8 +7,8 @@ const games = [
     { name: "Slope", file: "slope.html.html" },
     { name: "Spacebar Clicker", file: "spacebarclicker.html.html" },
     { name: "Stack", file: "stack.html" },
-    { name: "Stickman Hook", file: "stickmanhook.html" },
-    { name: "Stickman Hook (Alt)", file: "stickmanhook.html.html" },
+    { name: "Stickman Hook", file: "stickmanhook.html.html" },
+    { name: "drive mad", file: "drivemad.html" },
     { name: "Super Mario 64", file: "supermario64.html" }
 ];
 
