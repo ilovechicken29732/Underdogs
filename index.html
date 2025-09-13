@@ -5,16 +5,31 @@
     <title>Incatnito</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect x='6' y='6' width='36' height='36' fill='%23011111' stroke='%2300ffff' stroke-width='3' rx='6' ry='6'/%3E%3Ctext x='50%25' y='54%25' fill='%2300ffff' font-family='Arial, monospace' font-weight='bold' font-size='24' text-anchor='middle' dominant-baseline='middle'%3EI%3C/text%3E%3C/svg%3E" />
+    <link rel="icon" href="image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect x='6' y='6' width='36' height='36' fill='%23ffffff' stroke='%23000000' stroke-width='3' rx='6' ry='6'/%3E%3Ctext x='50%25' y='55%25' fill='%23000000' font-family='Arial, monospace' font-weight='bold' font-size='22' text-anchor='middle' dominant-baseline='middle'%3EI%3C/text%3E%3C/svg%3E" />
+    <style>
+        body { margin:0; font-family: Arial, sans-serif; background:#fff; color:#000; }
+        aside { width:220px; background:#000; color:#fff; padding:20px; position:fixed; top:0; bottom:0; }
+        #site-logo { display:flex; align-items:center; margin-bottom:25px; }
+        #site-logo svg { margin-right:10px; }
+        nav button { display:block; width:100%; padding:10px; margin:5px 0; background:#fff; border:2px solid #000; color:#000; cursor:pointer; border-radius:5px; }
+        nav button.active { background:#000; color:#fff; font-weight:bold; }
+        main { margin-left:240px; padding:20px; }
+        .tab { display:none; }
+        .tab.active { display:block; }
+        .card { background:#f4f4f4; border:1px solid #000; border-radius:5px; padding:15px; margin-top:15px; }
+        iframe#game-frame.fullscreen { position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:9999; border:none; }
+        footer { margin-top:40px; font-size:12px; color:#aaa; }
+        a { color:#000; font-weight:bold; text-decoration:none; }
+    </style>
 </head>
 <body>
     <aside id="sidebar" role="complementary" aria-label="Main Sidebar">
         <div id="site-logo" aria-label="Incatnito logo" role="img" tabindex="0">
-            <svg width="44" height="44" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" >
-                <rect x="6" y="6" width="36" height="36" fill="#011111" stroke="#00ffff" stroke-width="3" rx="6" ry="6"/>
-                <text x="50%" y="62%" fill="#00ffff" font-family="Arial, monospace" font-weight="bold" font-size="24" text-anchor="middle" dominant-baseline="middle">I</text>
+            <svg width="44" height="44" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                <rect x="6" y="6" width="36" height="36" fill="#fff" stroke="#000" stroke-width="3" rx="6" ry="6"/>
+                <text x="50%" y="57%" fill="#000" font-family="Arial, monospace" font-weight="bold" font-size="20" text-anchor="middle" dominant-baseline="middle">I</text>
             </svg>
-            <span>Incatnito</span>
+            <span><strong>Incatnito</strong></span>
         </div>
         <nav id="main-nav" role="navigation" aria-label="Primary Navigation">
             <button class="nav-btn active" data-tab="games" role="tab" aria-selected="true" aria-controls="games-tab">🎮 Games</button>
@@ -25,6 +40,7 @@
             <small>Created by a West Fork student<br>&copy; 2025 ilovechicken29732</small>
         </footer>
     </aside>
+
     <main id="main-content">
         <section id="games-tab" class="tab active" role="tabpanel" aria-labelledby="games" tabindex="0">
             <h1>Offline Games</h1>
@@ -33,46 +49,83 @@
                 <iframe id="game-frame" src="" frameborder="0" allowfullscreen title="Game frame"></iframe>
                 <div id="game-placeholder" class="card-content">
                     <h2>Welcome to Incatnito</h2>
-                    <p>Select a game from your library to play offline instantly.<br />
-                    Choose your play mode in settings: here, new tab, or private mode.</p>
+                    <p>Select a game from your library and start playing instantly.<br />
+                    Choose how you want to play: in fullscreen here, a new tab, or in a private about:blank window.</p>
                 </div>
             </div>
         </section>
+
         <section id="about-tab" class="tab" role="tabpanel" aria-labelledby="about" tabindex="0">
             <h1>About Incatnito</h1>
             <div class="card">
                 <div class="card-content">
-                    <p><strong>Incatnito</strong> is your private offline game launcher. Built by a West Fork student, it ensures your games are local, secure, and accessible without internet.</p>
+                    <p><strong>Incatnito</strong> is a lightweight offline game launcher created for privacy and ease of use. It ensures your games run locally, safely, and without internet interruptions.</p>
                     <ul>
-                        <li>Sleek dark theme with vibrant tech accent</li>
-                        <li>Flexible play modes for convenience and privacy</li>
-                        <li>Designed with simplicity, privacy, and speed in mind</li>
-                        <li>Open source and community-friendly</li>
+                        <li>Clean black & white design with focus on simplicity</li>
+                        <li>Multiple play modes: fullscreen, new tab, private tab</li>
+                        <li>Fast, reliable, and distraction‑free experience</li>
+                        <li>Open‑source and student‑built project</li>
                     </ul>
-                    <p>Created by <a href="https://github.com/ilovechicken29732" target="_blank" rel="noopener">ilovechicken29732</a></p>
+                    <p>Made with care by <a href="https://github.com/ilovechicken29732" target="_blank" rel="noopener">ilovechicken29732</a>.</p>
                 </div>
             </div>
         </section>
+
         <section id="settings-tab" class="tab" role="tabpanel" aria-labelledby="settings" tabindex="0">
             <h1>Settings</h1>
             <div class="card">
                 <div class="card-content">
                     <label for="play-mode">Game Play Mode:</label>
                     <select id="play-mode" aria-describedby="play-mode-desc">
-                        <option value="here">Play in this tab</option>
+                        <option value="here">Play in this tab (fullscreen)</option>
                         <option value="newtab">Open in new tab</option>
                         <option value="blank">Open in private mode (about:blank)</option>
                     </select>
                     <div id="play-mode-desc" class="sr-only">
-                        Choose how games launch when selected: in current tab, a new tab, or a private tab for privacy.
+                        Choose how games should load: embedded fullscreen, separate tab, or private about:blank window.
                     </div>
                     <hr />
-                    <p><strong>Theme:</strong> Dark & Tech Blue (always on)</p>
+                    <p><strong>Theme:</strong> Classic Black & White</p>
                 </div>
             </div>
         </section>
     </main>
-    <script src="main.js"></script>
+
+    <script>
+        // Tab Control
+        document.querySelectorAll('.nav-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+                document.getElementById(btn.dataset.tab + "-tab")?.classList.add('active');
+            });
+        });
+
+        // Game launch handling
+        const gameFrame = document.getElementById("game-frame");
+
+        function openGame(url) {
+            const mode = document.getElementById("play-mode").value;
+            if (mode === "here") {
+                gameFrame.src = url;
+                gameFrame.classList.add("fullscreen");
+            } else if (mode === "newtab") {
+                window.open(url, "_blank");
+            } else if (mode === "blank") {
+                const win = window.open("about:blank");
+                if (win) {
+                    const doc = win.document;
+                    doc.write(`<iframe src="${url}" style="border:none; width:100vw; height:100vh;"></iframe>`);
+                    doc.close();
+                }
+            }
+        }
+
+        // Dummy game list (replace with your own games)
+        document.getElementById("games-list").innerHTML = `
+            <button onclick="openGame('https://example.com/game.html')">Play Sample Game</button>
+        `;
+    </script>
 </body>
 </html>
- 
