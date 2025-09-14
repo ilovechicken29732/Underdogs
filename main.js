@@ -11,6 +11,7 @@
     { name: "drive mad", file: "drivemad.html" },
     { name: "Super Mario 64", file: "supermario64.html" },
     { name: "trex", file: "trex.html" },
+  { name: "cookie clicker", file: "cookie.html" },
 ];
 
 // Sidebar navigation logic
