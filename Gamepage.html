@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ElA Game</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="game-page">
+  <header>
+    <button onclick="window.location.href='index.html'" class="back-btn">← Back</button>
+    <h1 id="game-title"></h1>
+    <button id="fullscreen-btn">⛶ Fullscreen</button>
+  </header>
+  <main>
+    <iframe id="game-frame" src="" allowfullscreen></iframe>
+  </main>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const file = params.get("file");
+  const title = params.get("title");
+  document.getElementById("game-title").textContent = title || "Game";
+  const iframe = document.getElementById("game-frame");
+  iframe.src = file;
+
+  // Fullscreen
+  document.getElementById("fullscreen-btn").addEventListener("click", () => {
+    if (iframe.requestFullscreen) iframe.requestFullscreen();
+  });
+</script>
+</body>
+</html>
