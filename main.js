@@ -57,8 +57,6 @@ function playGame(idx) {
         frame.src = gameFile;
         frame.style.display = 'block';
         document.getElementById('game-placeholder').style.display = 'none';
-        // Remove fullscreen embed if present when new game loaded
-        frame.classList.remove('fullscreen-embed');
     }
 }
 
@@ -76,13 +74,16 @@ document.addEventListener('keydown', (e) => {
     if (e.key === '3') document.querySelector('.nav-btn[data-tab="settings"]').click();
 });
 
-// Fullscreen embed toggle for the game iframe (fills main content area)
-function toggleFullscreenEmbed() {
-    const iframe = document.getElementById('game-frame');
-    iframe.classList.toggle('fullscreen-embed');
-}
-
-// Fullscreen button toggle event
+// Fullscreen button logic for the game iframe
 document.getElementById('fullscreen-btn').addEventListener('click', () => {
-    toggleFullscreenEmbed();
+    const iframe = document.getElementById('game-frame');
+    if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+    } else if (iframe.mozRequestFullScreen) { /* Firefox */
+        iframe.mozRequestFullScreen();
+    } else if (iframe.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+        iframe.webkitRequestFullscreen();
+    } else if (iframe.msRequestFullscreen) { /* IE/Edge */
+        iframe.msRequestFullscreen();
+    }
 });
