@@ -1,8 +1,16 @@
 const games = [
-  { name: "2048", file: "2048.html" },
-  { name: "Geometry Dash", file: "geometrydash.html" },
-  { name: "Stack", file: "stack.html" },
-  { name: "Slope", file: "slope.html" }
+  { name: "2048", file: "2048.html.html" },
+    { name: "Geometry Dash", file: "geometrydash.html.html" },
+    { name: "It's Raining Boxes", file: "itsrainingboxes.html" },
+    { name: "Just One Boss", file: "justoneboss.html" },
+    { name: "Ninja vs Evil Corp", file: "ninjavsevilcorp.html.html" },
+    { name: "Slope", file: "slope.html.html" },
+    { name: "Spacebar Clicker", file: "spacebarclicker.html.html" },
+    { name: "Stack", file: "stack.html" },
+    { name: "Stickman Hook", file: "stickmanhook.html" },
+    { name: "drive mad", file: "drivemad.html" },
+    { name: "Super Mario 64", file: "supermario64.html" },
+    { name: "trex", file: "trex.html" },
 ];
 
 // Sidebar tab switching
